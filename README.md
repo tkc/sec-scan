@@ -6,6 +6,8 @@ Local-Sec is a powerful CLI tool for detecting personal information in documents
 privacy risks. It helps prevent accidental leakage of sensitive information by scanning files for
 personal data before they are shared or published.
 
+![image](https://github.com/user-attachments/assets/e5823cfc-6886-4f67-b697-3adb8746b8b8)
+
 Features
 
 - Multi-format Support: Scans text files, PDFs, DOCX documents, and more
