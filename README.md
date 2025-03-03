@@ -27,11 +27,6 @@ Prerequisites
 
 Building from Source
 
-# Clone the repository
-
-git clone https://github.com/yourusername/local-sec.git
-cd local-sec
-
 # Build the project
 
 cargo build --release
