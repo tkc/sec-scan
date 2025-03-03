@@ -2,7 +2,7 @@
 
 Privacy Risk Scanner for Local Documents
 
-Local-Sec is a powerful CLI tool for detecting personal information in documents and identifying
+sec-scan is a powerful CLI tool for detecting personal information in documents and identifying
 privacy risks. It helps prevent accidental leakage of sensitive information by scanning files for
 personal data before they are shared or published.
 
@@ -29,91 +29,109 @@ Building from Source
 
 # Build the project
 
+```bash
 cargo build --release
+```
 
 # Install (optional)
 
+```bash
 cargo install --path .
+```
 
 Usage
 
-Local-Sec provides two main commands:
+```bash
+sec-scan provides two main commands:
+```
 
 Scanning Directories
 
 # Scan current directory
 
-personal-info-scanner scan
+```bash
+sec-scan scan
+```
 
 # Scan a specific directory
 
-personal-info-scanner scan /path/to/directory
+```bash
+sec-scan scan /path/to/directory
+```
 
 # Save results to a file
 
-personal-info-scanner scan /path/to/directory --output results.json
+```bash
+sec-scan scan /path/to/directory --output results.json
+```
 
 # Skip API usage and use regex-only detection (faster but less accurate)
 
-personal-info-scanner scan /path/to/directory --no-api
+```bash
+sec-scan scan /path/to/directory --no-api
+```
 
 # Disable PDF scanning
 
-personal-info-scanner scan /path/to/directory --pdf false
+```bash
+sec-scan scan /path/to/directory --pdf false
+```
 
 # Show verbose logs
 
-personal-info-scanner scan /path/to/directory --verbose
-
-Scanning Individual Files
+```bash
+sec-scan scan /path/to/directory --verbose
+```
 
 # Scan a single file
 
-personal-info-scanner scan-file /path/to/file.txt
+```bash
+sec-scan scan-file /path/to/file.txt
+```
 
 # Save results to a file
 
-personal-info-scanner scan-file /path/to/file.pdf --output results.json
+```bash
+sec-scan scan-file /path/to/file.pdf --output results.json
+```
 
 # Use regex-only detection
 
-personal-info-scanner scan-file /path/to/file.docx --no-api
+```bash
+sec-scan scan-file /path/to/file.docx --no-api
+```
 
-Options
+```bash
+sec-scan produces JSON-formatted output containing detected personal information:
+```
 
-Scan Command
-
-ScanFile Command
-
-Output Format
-
-Local-Sec produces JSON-formatted output containing detected personal information:
-
+```json
 [
-{
-"file": "path/to/file1.txt",
-"personal*information": [
-{
-"type*": "email",
-"value": "test@example.com",
-"line": 5,
-"start": 10,
-"end": 25
-},
-{
-"type\_": "phone_number",
-"value": "090-1234-5678",
-"line": 12,
-"start": 3,
-"end": 17
-}
+  {
+    "file": "path/to/file1.txt",
+    "personal*information": [
+      {
+        "type*": "email",
+        "value": "test@example.com",
+        "line": 5,
+        "start": 10,
+        "end": 25
+      },
+      {
+        "type_": "phone_number",
+        "value": "090-1234-5678",
+        "line": 12,
+        "start": 3,
+        "end": 17
+      }
+    ]
+  },
+  {
+    "file": "path/to/file2.pdf",
+    "personal_information": []
+  }
 ]
-},
-{
-"file": "path/to/file2.pdf",
-"personal_information": []
-}
-]
+```
 
 Field Descriptions
 
@@ -127,7 +145,7 @@ Field Descriptions
 
 Detectable Information
 
-Local-Sec can detect various types of personal information:
+sec-scan can detect various types of personal information:
 
 1. Email Addresses: Standard email formats
 2. Phone Numbers: Various formats including Japanese phone numbers
@@ -138,7 +156,7 @@ Local-Sec can detect various types of personal information:
 
 Detection Methods
 
-Local-Sec supports two detection methods:
+sec-scan supports two detection methods:
 
 1. LLM-based Detection (default)Uses Ollama API with the Deepseek Coder model for high-accuracy
    detection
@@ -147,7 +165,7 @@ Local-Sec supports two detection methods:
 
 Architecture
 
-Local-Sec is built on a robust architecture inspired by Domain-Driven Design and Clean Architecture:
+sec-scan is built on a robust architecture inspired by Domain-Driven Design and Clean Architecture:
 
 - Domain Layer: Core business logic and interfaces
 - Application Layer: Orchestration of use cases
@@ -167,13 +185,3 @@ Limitations
 Contributing
 
 Bug reports and feature requests are welcome via GitHub issues. Pull requests are also welcome.
-
-License
-
-Local-Sec is available under the LICENSE.
-
-Acknowledgments
-
-- https://ollama.com/ for providing local LLM infrastructure
-- https://ollama.com/library/deepseek-coder for the detection model
-- The Rust community for excellent libraries and tools
