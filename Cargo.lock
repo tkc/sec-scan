@@ -1774,30 +1774,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e3148f5046208a5d56bcfc03053e3ca6334e51da8dfb19b6cdc8b306fae3283e"
 
 [[package]]
-name = "personal-info-scanner"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "clap",
- "docx-rust",
- "futures",
- "indicatif",
- "lopdf 0.32.0",
- "mockito",
- "pdf-extract",
- "regex",
- "reqwest",
- "serde",
- "serde_json",
- "tempfile",
- "thiserror",
- "tokio",
- "tokio-test",
- "walkdir",
- "zip 0.6.6",
-]
-
-[[package]]
 name = "pin-project-lite"
 version = "0.2.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2159,6 +2135,30 @@ name = "scopeguard"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
+
+[[package]]
+name = "sec-scan"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "clap",
+ "docx-rust",
+ "futures",
+ "indicatif",
+ "lopdf 0.32.0",
+ "mockito",
+ "pdf-extract",
+ "regex",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "thiserror",
+ "tokio",
+ "tokio-test",
+ "walkdir",
+ "zip 0.6.6",
+]
 
 [[package]]
 name = "security-framework"

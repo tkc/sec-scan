@@ -9,11 +9,9 @@ impl ProgressBar {
         let pb = IndicatifProgressBar::new(total_files);
         pb.set_style(
             ProgressStyle::default_bar()
-                .template(
-                    "{spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] {pos}/{len} ({eta})",
-                )
+                .template("{spinner:.green} [{bar:40.cyan/blue}] {msg}")
                 .expect("Failed to set progress bar template")
-                .progress_chars("#>-"),
+                .progress_chars("█▓▒░"),
         );
         Self { pb }
     }
